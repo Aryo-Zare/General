@@ -95,6 +95,9 @@ from PIL import Image
 
 # %%'
 
+# The underlying dataframe values remain full‑precision (typically 64‑bit floating point).
+    # Only the string representation shown in the notebook or console is formatted to 6 decimals.
+    # Any calculations you perform still use the original high‑precision numbers.
 pd.set_option('display.float_format', lambda x: '%.6f' % x)
 pd.set_option('display.max_columns', None)
 
