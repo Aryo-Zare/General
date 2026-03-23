@@ -11,7 +11,7 @@ from openpyxl.utils import column_index_from_string
 
 import polars as pl
 
-# %%'
+# %% dask
 
 import dask.dataframe as dd
 
@@ -20,7 +20,7 @@ from dask.diagnostics import ProgressBar
 from dask.distributed import Client
 from dask.distributed import get_task_stream
 
-# %%'
+# %% scipy
 
 from scipy import signal as ss   
 from scipy.optimize import curve_fit
@@ -34,7 +34,7 @@ from scipy.io import loadmat
 import scipy.interpolate as IPL
 from scipy.interpolate import griddata
 
-# %%'
+# %%%'
 
 # geometric mean & standard deviation.
 from scipy.stats import gmean
@@ -47,7 +47,7 @@ from scipy.stats import kruskal   #  Kruskal-Wallis H-test for independent sampl
 from scipy.stats import friedmanchisquare
 from scipy.stats import normaltest as norm
 
-# %%'
+# %% stat
 
 # adjusting p-values to account for multiple comparisons ( example : Bonferroni).
 from statsmodels.stats.multitest import multipletests 
@@ -56,8 +56,7 @@ import statsmodels.api as sm
 
 import pingouin as pg 
 
-# %%'
-# %%'
+# %% plot
 
 import matplotlib.pyplot as plt
 %matplotlib qt
@@ -71,13 +70,13 @@ from mpl_toolkits.mplot3d import Axes3D
 from matplotlib.lines import Line2D
 from matplotlib.colors import LogNorm
 
-# %%'
+# %%%'
 
 import seaborn as sns
 
 from statannotations.Annotator import Annotator
 
-# %%'
+# %%%'
 
 import plotly.express as px
 import plotly.graph_objects as go
@@ -93,13 +92,20 @@ from PIL import Image
 # I didn't use it
 # import open3d as o3d
 
-# %%'
+# %% print
 
 # The underlying dataframe values remain full‑precision (typically 64‑bit floating point).
     # Only the string representation shown in the notebook or console is formatted to 6 decimals.
     # Any calculations you perform still use the original high‑precision numbers.
 pd.set_option('display.float_format', lambda x: '%.6f' % x)
+
+# max number of columns to show.
 pd.set_option('display.max_columns', None)
+
+# max length of the column charachters ( specially if they are a long string ).
+pd.set_option('display.max_colwidth', None)
+# If you only want to print the the column charachters (without changing global settings) :
+# print(metadata_3['File Location'][:10].to_string())
 
 # sns.set(font_scale=1.75)   #  this makes the default seaborn : gray background with grids.
 
@@ -109,7 +115,7 @@ pd.set_option('display.max_columns', None)
 # font_scale : I made it 3 for statistical plots.
 sns.set(style="ticks", font_scale=2)  # matplotlib style : only the fontsize is changed.
 
-# %%'
+# %%%'
 
 np.set_printoptions(suppress=True)
 
@@ -120,7 +126,8 @@ np.set_printoptions(suppress=True)
 
 from open_ephys.analysis import Session
 
-from PyPDF2 import PdfFileMerger, PdfFileReader
+from pypdf import PdfMerger
+# from PyPDF2 import PdfFileMerger, PdfFileReader
 
 
 import adaptivekde as opt
@@ -179,7 +186,7 @@ import copy
 #import sounddevice as sd
 #
 
-# %%'
+# %% scikit-learn
 
 from sklearn.pipeline import make_pipeline as mpl
 
@@ -197,7 +204,15 @@ from sklearn.cluster import AgglomerativeClustering
 from sklearn.cluster import DBSCAN
 from sklearn.cluster import KMeans
 
-# %%' built-in modules (written in C)
+# %% scikit-bio
+
+# permanova
+from skbio.stats.distance import permanova
+from skbio.stats.distance import DistanceMatrix
+
+# %% built-in modules 
+
+# written in C.
 
 import os
 import sys
@@ -230,6 +245,32 @@ from joblib import Parallel, delayed
 
 import torch
 
-# %%'
+# %%
 
+import pyedflib
+import mne
+
+# %% annotation marks
+
+# todo
+# fixme
+# xxx
+# tip
+# @todo
+# hack
+# bug
+# optimize
+# !!!
+# ???
+
+# hint 
+# xxx    test
+
+# %% section
+
+#---- it appears when some text is written here.
+# ---- some text
+#### text
+
+# %%'
 
