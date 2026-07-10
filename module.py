@@ -61,7 +61,7 @@ import pingouin as pg
 # %% plot
 
 import matplotlib.pyplot as plt
-%matplotlib qt
+# %matplotlib qt
 
 # to make a legend for the overlapped gray band of normal ranges.
 import matplotlib.patches as mpatches
@@ -95,6 +95,21 @@ from PIL import Image
 # import open3d as o3d
 
 # %% print
+
+#=======================================================
+#---- console wrap
+
+# check your console's width !
+'1'*160
+# Out[28]: '11111111111111111111111111111111111111111111111111111111111111111111111111111111 ...
+
+# when it wraps output in the IPython console.
+pd.get_option('display.width')
+    # Out[23]: 80
+
+pd.set_option('display.width', 160)
+
+#=======================================================
 
 # The underlying dataframe values remain full‑precision (typically 64‑bit floating point).
     # Only the string representation shown in the notebook or console is formatted to 6 decimals.
@@ -216,17 +231,22 @@ from skbio.stats.distance import DistanceMatrix
 
 # written in C.
 
+#===============================================
 import os
 import sys
 import subprocess
-from datetime import datetime, timedelta
 from pathlib import Path
+
+#===============================================
+from datetime import datetime, timedelta
 import re      # regular expression
 import collections
 import string
 import json
 import math
 import itertools
+
+# rich
 
 # %%'
 
@@ -250,6 +270,22 @@ import torch
 
 import pyedflib
 import mne
+
+# %% qt
+
+# checking the qt version.
+    # qt-5  =>  light-colored windows top bar in spyder.
+# to install qt-6  =>  vs-code // conda
+
+from PyQt6.QtWidgets import QApplication
+QApplication.instance().style().objectName()
+    # Out[2]: 'windows11'
+
+#=================
+
+import PyQt5.QtWidgets as QtW
+QtW.QApplication.instance().style().objectName()
+
 
 # %% annotation marks
 

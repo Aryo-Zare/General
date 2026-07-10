@@ -13,5 +13,13 @@ for i in all_numbers:
     folder_name = f"ZC{i:02d}"
     (base_path / folder_name).mkdir(exist_ok=True)
 
+# %% cpu
+
+import os
+
+# number of CPU threads
+os.cpu_count()
+    # Out[1]: 24
+
 # %%'
 
