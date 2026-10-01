@@ -96,6 +96,9 @@ from PIL import Image
 
 # %% print
 
+# font_scale : I made it 3 for statistical plots.
+sns.set(style="ticks", font_scale=2)  # matplotlib style : only the fontsize is changed.
+
 #=======================================================
 #---- console wrap
 
@@ -129,8 +132,6 @@ pd.set_option('display.max_colwidth', None)
 # sns.set_style("white")
 # sns.set(style="whitegrid", font_scale=1.75)
 
-# font_scale : I made it 3 for statistical plots.
-sns.set(style="ticks", font_scale=2)  # matplotlib style : only the fontsize is changed.
 
 # %%%'
 
